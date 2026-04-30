@@ -1,7 +1,6 @@
 package com.generation;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CarritoTest
@@ -39,4 +38,20 @@ public class CarritoTest
         assertEquals(8000, carrito.calcularTotal());
     }
 
+    @Test
+    void carritoConAlMenosUnProductoNoVacio()
+    {
+        Carrito carrito = new Carrito();
+        Producto producto = new Producto("Pollo feliz", 10500, 10);
+
+        carrito.agregar(producto);
+        assertFalse(carrito.estaVacio());
+    }
+
+    @Test
+    void totalCarritoVacioEs0()
+    {
+        Carrito carrito = new Carrito();
+        assertEquals(0, carrito.cantidadDeProductos());
+    }
 }

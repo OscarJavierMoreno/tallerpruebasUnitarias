@@ -57,4 +57,22 @@ public class ProductoTest
         assertThrows(IllegalArgumentException.class, () ->
                 new Producto("Error arepero", -1500, 10));
     }
+
+
+    //Prueba libre
+    @Test
+    void crearProductoConStockNegativoLanzaExcepcion()
+    {
+        // ¿Qué comportamiento están probando?
+        // Probar que el constructor no permita crear un producto con stock inicial menor a cero.
+
+        // ¿Qué aserción van a usar y por qué?
+        // assertThrows, porque el código de producción lanza IllegalArgumentException ante valores negativos.
+
+        // ¿Qué valor esperan obtener?
+        // Que se capture la excepción correctamente y la prueba pase a verde.
+
+        assertThrows(IllegalArgumentException.class, () ->
+                new Producto("Teclado del futuro", 150000, -1));
+    }
 }
